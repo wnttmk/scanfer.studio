@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.win", "scanfer.studio.autotask\scanfer.studio.autotask.win\scanfer.studio.autotask.win.csproj", "{20731667-ABD2-4FD3-9AD5-E3E4FDFB726D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "autotask", "autotask", "{735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.entiry", "scanfer.studio.autotask\scanfer.studio.autotask.entiry\scanfer.studio.autotask.entiry.csproj", "{79BAE303-4DEA-4BD1-A463-72B20DCC103D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.temp", "scanfer.studio.autotask\scanfer.studio.autotask.temp\scanfer.studio.autotask.temp.csproj", "{71BB2C3B-4038-40DC-A408-EB9602AA8590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.testunit", "scanfer.studio.autotask\scanfer.studio.autotask.testunit\scanfer.studio.autotask.testunit.csproj", "{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +23,27 @@ Global
 		{20731667-ABD2-4FD3-9AD5-E3E4FDFB726D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20731667-ABD2-4FD3-9AD5-E3E4FDFB726D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20731667-ABD2-4FD3-9AD5-E3E4FDFB726D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79BAE303-4DEA-4BD1-A463-72B20DCC103D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BAE303-4DEA-4BD1-A463-72B20DCC103D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BAE303-4DEA-4BD1-A463-72B20DCC103D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BAE303-4DEA-4BD1-A463-72B20DCC103D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71BB2C3B-4038-40DC-A408-EB9602AA8590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71BB2C3B-4038-40DC-A408-EB9602AA8590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71BB2C3B-4038-40DC-A408-EB9602AA8590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71BB2C3B-4038-40DC-A408-EB9602AA8590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20731667-ABD2-4FD3-9AD5-E3E4FDFB726D} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
+		{79BAE303-4DEA-4BD1-A463-72B20DCC103D} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
+		{71BB2C3B-4038-40DC-A408-EB9602AA8590} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
+		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {108E5698-F06D-48B3-BE12-0FD9594E8963}
