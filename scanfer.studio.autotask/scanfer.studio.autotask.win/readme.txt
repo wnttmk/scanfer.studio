@@ -8,6 +8,6 @@
 
 日志存储：SQLite
 任务调度：quartz.NET
-前端：WPF
+前端：mahAPP.metro
 
 
