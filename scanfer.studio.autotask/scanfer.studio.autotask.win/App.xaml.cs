@@ -27,11 +27,11 @@ namespace scanfer.studio.autotask.win
             var builder = new ContainerBuilder();
 
             #region 注册 ,通过config文件进行注册
-            //var config = new ConfigurationBuilder();
-            //config.AddJsonFile("autofac.json");
-            //// Register the ConfigurationModule with Autofac.
-            //var module = new ConfigurationModule(config.Build());
-            //builder.RegisterModule(module);
+            var config = new ConfigurationBuilder();
+            config.AddJsonFile("autofac.json");
+            // Register the ConfigurationModule with Autofac.
+            var module = new ConfigurationModule(config.Build());
+            builder.RegisterModule(module);
             #endregion
 
             #region 通过.net Core DI进行注册

@@ -3,15 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.win", "scanfer.studio.autotask\scanfer.studio.autotask.win\scanfer.studio.autotask.win.csproj", "{20731667-ABD2-4FD3-9AD5-E3E4FDFB726D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scanfer.studio.autotask.win", "scanfer.studio.autotask\scanfer.studio.autotask.win\scanfer.studio.autotask.win.csproj", "{20731667-ABD2-4FD3-9AD5-E3E4FDFB726D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "autotask", "autotask", "{735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.entiry", "scanfer.studio.autotask\scanfer.studio.autotask.entiry\scanfer.studio.autotask.entiry.csproj", "{79BAE303-4DEA-4BD1-A463-72B20DCC103D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scanfer.studio.autotask.entiry", "scanfer.studio.autotask\scanfer.studio.autotask.entiry\scanfer.studio.autotask.entiry.csproj", "{79BAE303-4DEA-4BD1-A463-72B20DCC103D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.temp", "scanfer.studio.autotask\scanfer.studio.autotask.temp\scanfer.studio.autotask.temp.csproj", "{71BB2C3B-4038-40DC-A408-EB9602AA8590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scanfer.studio.autotask.temp", "scanfer.studio.autotask\scanfer.studio.autotask.temp\scanfer.studio.autotask.temp.csproj", "{71BB2C3B-4038-40DC-A408-EB9602AA8590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.autotask.testunit", "scanfer.studio.autotask\scanfer.studio.autotask.testunit\scanfer.studio.autotask.testunit.csproj", "{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scanfer.studio.autotask.testunit", "scanfer.studio.autotask\scanfer.studio.autotask.testunit\scanfer.studio.autotask.testunit.csproj", "{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scanfer.studio.web", "scanfer.studio.web\scanfer.studio.web.csproj", "{1136B5C3-3AE1-427D-9053-F2B1B762DFAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scanfer.studio.dockerWeb", "scanfer.studio.dockerWeb\scanfer.studio.dockerWeb.csproj", "{38F79DC8-CEF5-4B4B-A22B-8063996975CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "grpc", "grpc", "{32B1F3A9-24EE-436E-AFE0-A29A8C85FB39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.GrpcTest", "scanfer.studio.GrpcTest\scanfer.studio.GrpcTest.csproj", "{FFA74A6E-C1B4-4A73-9645-6F5C53DE4EF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanfer.studio.GrpcClient", "scanfer.studio.GrpcClient\scanfer.studio.GrpcClient.csproj", "{00B30B0F-8B9F-42CD-A5E6-289FE70D810A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +45,22 @@ Global
 		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1136B5C3-3AE1-427D-9053-F2B1B762DFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1136B5C3-3AE1-427D-9053-F2B1B762DFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1136B5C3-3AE1-427D-9053-F2B1B762DFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1136B5C3-3AE1-427D-9053-F2B1B762DFAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F79DC8-CEF5-4B4B-A22B-8063996975CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F79DC8-CEF5-4B4B-A22B-8063996975CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F79DC8-CEF5-4B4B-A22B-8063996975CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F79DC8-CEF5-4B4B-A22B-8063996975CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA74A6E-C1B4-4A73-9645-6F5C53DE4EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA74A6E-C1B4-4A73-9645-6F5C53DE4EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA74A6E-C1B4-4A73-9645-6F5C53DE4EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA74A6E-C1B4-4A73-9645-6F5C53DE4EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B30B0F-8B9F-42CD-A5E6-289FE70D810A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B30B0F-8B9F-42CD-A5E6-289FE70D810A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B30B0F-8B9F-42CD-A5E6-289FE70D810A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B30B0F-8B9F-42CD-A5E6-289FE70D810A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +70,10 @@ Global
 		{79BAE303-4DEA-4BD1-A463-72B20DCC103D} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
 		{71BB2C3B-4038-40DC-A408-EB9602AA8590} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
 		{72146A4D-BC56-4051-A8C1-D5F5CB5BA25F} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
+		{1136B5C3-3AE1-427D-9053-F2B1B762DFAB} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
+		{38F79DC8-CEF5-4B4B-A22B-8063996975CF} = {735B9D34-6325-4A3F-90E2-FEFF1BDD86D8}
+		{FFA74A6E-C1B4-4A73-9645-6F5C53DE4EF2} = {32B1F3A9-24EE-436E-AFE0-A29A8C85FB39}
+		{00B30B0F-8B9F-42CD-A5E6-289FE70D810A} = {32B1F3A9-24EE-436E-AFE0-A29A8C85FB39}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {108E5698-F06D-48B3-BE12-0FD9594E8963}
