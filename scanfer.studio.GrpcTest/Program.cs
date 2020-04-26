@@ -12,7 +12,13 @@ namespace scanfer.studio.GrpcTest
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            new TaskFactory().StartNew(() =>
+            {
+                CreateHostBuilder(args).Build().Run();
+            });
+            while (true) {
+                var k = Console.ReadLine();
+            }
         }
 
         // Additional configuration is required to successfully run gRPC on macOS.
@@ -21,7 +27,9 @@ namespace scanfer.studio.GrpcTest
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                    
+                    ;
                 });
     }
 }

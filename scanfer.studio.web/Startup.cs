@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 namespace scanfer.studio.web
 {
     public class Startup
-    {
+    { 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,6 +24,7 @@ namespace scanfer.studio.web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
             services.AddControllers();
         }
 

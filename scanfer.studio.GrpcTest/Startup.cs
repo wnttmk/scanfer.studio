@@ -28,7 +28,7 @@ namespace scanfer.studio.GrpcTest
             }
 
             app.UseRouting();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<GreeterService>();

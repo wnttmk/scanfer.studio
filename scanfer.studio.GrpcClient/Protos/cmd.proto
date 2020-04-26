@@ -1,0 +1,35 @@
+﻿syntax = "proto3";
+option csharp_namespace = "scCore.scControl";
+
+package gRPCServ;
+
+service ExecuteServ {
+    rpc ApiOne (ServOneRequest ) returns (stream ServOneReply) ;
+	rpc ApiTwo(ServOneRequest) returns (stream ServOneReply) ;
+
+	rpc AddPerson(Person) returns(PersonResult);
+}
+
+message ServOneRequest{
+    string SyllabusID=1;
+}
+message ServOneReply{
+    string SyllabusID=1;
+}
+
+message Person {
+	 string name = 1;
+	 int32 id = 2;
+	string email = 3;
+	repeated  string phone = 4;
+}
+enum PhoneType {
+	MOBILE = 0;
+	HOME = 1;
+	WORK = 2;
+}
+
+
+message PersonResult{
+	 bool issucc = 1;
+}

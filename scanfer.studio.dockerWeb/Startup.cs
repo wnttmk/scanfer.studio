@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +28,7 @@ namespace scanfer.studio.dockerWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,11 +44,31 @@ namespace scanfer.studio.dockerWeb
             app.UseRouting();
 
             app.UseAuthorization();
+            //app.UserMyMiddleware();
+            //MiddlewareHelper.UserMyMiddleware2(app);
+            //app.UserMyMiddleware2();
+ 
+
+            
+
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+        }
+    }
+    public static class MiddlewareHelper
+    {
+        public static IApplicationBuilder UserMyMiddleware(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<object>();
+        }
+
+        public static IApplicationBuilder UserMyMiddleware2(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<object>();
         }
     }
 }

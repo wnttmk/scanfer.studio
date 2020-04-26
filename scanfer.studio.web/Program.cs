@@ -13,6 +13,15 @@ namespace scanfer.studio.web
     {
         public static void Main(string[] args)
         {
+            Task t = new Task(() =>
+            {
+                while (true)
+                {
+                    var m = Console.ReadLine();
+                    Console.WriteLine(m + "  -->back");
+                }
+            });
+            t.Start();
             CreateHostBuilder(args).Build().Run();
         }
 
