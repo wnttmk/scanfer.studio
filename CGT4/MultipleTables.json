@@ -1,0 +1,30 @@
+{
+  
+  "TablePrefix": null, //表格前缀
+  "Developers": null, //开发员
+  "ClassPrefix": null,
+  "Tables": [
+    {
+      "TableName": "baseTable", //表名
+      "Description": null, //表描述
+      "Columns": [
+        {
+          "ColumnName": "列名",
+          "TypeName": "varchar", //类型
+          "Length": "50", //长度
+          "Precision": "2", //精密度
+          "IsIdentity": true, //"是否自增长"
+          "IsPrimaryKey": true, //是否是唯一主键
+          "IsForeignKey": true, //是否是外键
+          "ForeignKeyTable": null, //外键表主表
+          "ForeignKeyTableColumn": null, //外键主表对应的字段
+          "relationship": 0, //与外键主表的关系 ，0无，1一对1  2 一对多
+          "Nullable": false, //是否允许为空
+          "DefaultVal": false, //是否允许为空
+          "Description": "" //描述
+        }
+      ]
+    }
+
+  ]
+}

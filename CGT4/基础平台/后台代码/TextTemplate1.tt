@@ -1,0 +1,49 @@
+﻿<#@ template debug="false" HostSpecific="True" language="C#" #>
+
+<#@ output extension=".cs" #>
+<#
+	MultipleTableTextTemplatingEngineHost host = (MultipleTableTextTemplatingEngineHost)(Host);
+#>
+
+#region << 版 本 注 释 >>
+
+/*----------------------------------------------------------------
+* 项目名称 ：ZJJWEPlatform.Repositories
+* 类 名 称 ：DefaultRepositoryOptions
+* 类 描 述 ：
+* 命名空间 ：ZJJWEPlatform.Repositories
+* CLR 版本 ：4.0.30319.42000
+* 作    者 ：DongliangYi
+* 创建时间 ：2018-11-20 17:46:18
+* 更新时间 ：2018-11-20 17:46:18
+* 版 本 号 ：v1.0.0.0
+//----------------------------------------------------------------*/
+
+#endregion << 版 本 注 释 >>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+using ZJJWEPlatform;
+using ZJJWEPlatform.AuthorizationDto;
+using ZJJWEPlatform.Domains.IRepositories;
+using ZJJWEPlatform.Domains.Service;
+using ZJJWEPlatform.Filters;
+using ZJJWEPlatform.Infrastructure;
+using ZJJWEPlatform.Infrastructure.Redis;
+using ZJJWEPlatform.IOC;
+using ZJJWEPlatform.Repositories;
+using ZJJWFoundationPlatform.Domains.Entity.Sys;
+using ZJJWFoundationPlatform.Domains.Exceptions;
+using ZJJWFoundationPlatform.Domains.Factory;
+using ZJJWFoundationPlatform.Domains.IRepositories.Sys;
+using ZJJWFoundationPlatform.DTO.Request.User;
+using ZJJWFoundationPlatform.DTO.Sys;
+using ZJJWFoundationPlatform.IService;
+using ZJJWFoundationPlatform.IService.Services.Sys;
+
+namespace ZJJWFoundationPlatform.Domains.Services.<#= host.NameSpace#>{
+	
+}

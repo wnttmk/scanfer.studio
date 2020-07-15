@@ -3,6 +3,7 @@ using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace CGT4
@@ -12,9 +13,85 @@ namespace CGT4
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "基础平台\\后台代码\\TextTemplate1.tt");
+            string input = File.ReadAllText(path, Encoding.UTF8);
 
-            var content = new T5.TextTemplating.TemplatingEngine().ProcessTemplate("",
-                 new ScanferTextTemplatingEngineHost()
+            var cGHost = new MultipleTableTextTemplatingEngineHost()
+            {
+                ClassPrefix = "Test",
+                Developers = "侯向阳",
+                NameSpace = "ZJJW",
+                TablePrefix = "CG_",
+                TemplateFile = path,
+                SaveFolder = "Order",
+                Tables = new TableInfo[] {
+                     new TableInfo(){
+                      TableName = "CG_OrderInfo",
+                       Description = "订单主表",
+                        Columns = new ColumnInfo[]{
+                             new ColumnInfo(){
+                              ColumnName = "ID",
+                               Description = "标识",
+                                IsForeignKey = false,
+                                 IsIdentity = false,
+                                  IsPrimaryKey = true,
+                                    Nullable= false,
+                                     TypeName = "varchar",
+                                      Length = "36",
+                                       DefaultVal = null,
+                                        Precision = null
+                             },
+                             new ColumnInfo(){
+                                 ColumnName = "OrderNo",
+                               Description = "订单号",
+                                IsForeignKey = false,
+                                 IsIdentity = false,
+                                  IsPrimaryKey = false,
+                                    Nullable= false,
+                                     TypeName = "varchar",
+                                      Length = "36",
+                                       DefaultVal = null,
+                                        Precision = null
+                             }
+                        }
+                     }, new TableInfo(){
+                         Description = "订单详情表",
+                         TableName = "CG_OrderDetail",
+                          Columns = new ColumnInfo[]{
+                            new ColumnInfo(){
+                                ColumnName = "ID",
+                               Description = "标识",
+                                IsForeignKey = false,
+                                 IsIdentity = false,
+                                  IsPrimaryKey = true,
+                                    Nullable= false,
+                                     TypeName = "varchar",
+                                      Length = "36",
+                                       DefaultVal = null,
+                                        Precision = null
+                            },
+                             new ColumnInfo(){
+                                  ColumnName = "OrderNo",
+                               Description = "订单号",
+                                IsForeignKey = true,
+                                 IsIdentity = false,
+                                  IsPrimaryKey = false,
+                                    Nullable= false,
+                                     TypeName = "varchar",
+                                      Length = "36",
+                                       DefaultVal = null,
+                                        Precision = null,
+                                         ForeignKeyTable = "CG_OrderInfo",
+                                          ForeignKeyTableColumn = "OrderNo",
+                                           relationship = 2
+                             }
+                          }
+                     }
+                   }
+            };
+
+            var content = new Mono.TextTemplating.TemplatingEngine().ProcessTemplate(input,
+                 cGHost
                  );
         }
     }
@@ -23,24 +100,34 @@ namespace CGT4
     {
         // Fields
         internal string _templateFileValue;
-        private string _namespace = "Scanfer";
+
         private string _fileExtensionValue = ".cs";
         private Encoding _fileEncodingValue = Encoding.UTF8;
         private CompilerErrorCollection _ErrorCollection;
 
+        private List<string> _assemblyReferences = new List<string>();
+        public ScanferTextTemplatingEngineHost()
+        {
+            _assemblyReferences = AppDomain.CurrentDomain.GetAssemblies().Select(m => m.Location).ToList();
+            _assemblyReferences.AddRange(
+                 new string[] {
+                 typeof(Uri).Assembly.Location,
+                 typeof(Mono.TextTemplating.TemplatingEngine).Assembly.Location,
+                 Path.Combine( AppDomain.CurrentDomain.BaseDirectory,"System.Core.dll")
+                }
+            );
+        }
+
         /// <summary>
         /// 获取程序集引用的列表。
         /// </summary>
-        public IList<string> StandardAssemblyReferences => new string[] {
-             typeof(Uri).Assembly.Location,
-             typeof(T5.TextTemplating.TemplatingEngine).Assembly.Location
-        };
+        public IList<string> StandardAssemblyReferences => _assemblyReferences;
 
         /// <summary>
         /// 获取命名空间的列表。
         /// </summary>
         public IList<string> StandardImports => new string[] {
-            "System", "System.Text", "System.Collections.Generic",
+            "System", "System.Text", "System.Collections.Generic","System.Linq","CGT4",
         };
         /// <summary>
         /// 获取所处理文本模板的路径和文件名。
@@ -88,7 +175,7 @@ namespace CGT4
         /// <param name="errors"></param>
         public void LogErrors(CompilerErrorCollection errors)
         {
-            throw new NotImplementedException();
+            this._ErrorCollection = errors;
         }
         /// <summary>
         /// 提供运行所生成转换类的应用程序域。
@@ -110,7 +197,8 @@ namespace CGT4
             {
                 return assemblyReference;
             }
-            string path = Path.Combine(Path.GetDirectoryName(this.TemplateFile), assemblyReference);
+            //string path = Path.Combine(Path.GetDirectoryName(this.TemplateFile), assemblyReference);
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, assemblyReference);
             if (File.Exists(path))
             {
                 return path;

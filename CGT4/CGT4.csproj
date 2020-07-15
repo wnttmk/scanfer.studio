@@ -6,7 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="T5.TextTemplating" Version="1.1.0" />
+    <PackageReference Include="Mono.TextTemplating" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Test.cmt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="基础平台\后台代码\TextTemplate1.tt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>
